@@ -1,0 +1,10 @@
+<ul id="{$SM_STR_IDNAME}" class="clearfix">
+	{foreach key=Index item=Category from=$SM_A_MAINNAV}
+	<li>
+		<a id="{$Category.alias}" href="{$SM_STR_DIR}{if isset($SM_A_REDIRECT[$Category.alias])}{$SM_A_REDIRECT[$Category.alias]}{else}{$Category.alias}{/if}/">{$Category.name}</a>
+		{if $SM_STR_SEPARATOR && $Index>0}
+			{$SM_STR_SEPARATOR}
+		{/if}
+	</li>
+	{/foreach}
+</ul>

@@ -1,0 +1,27 @@
+<div id="transfermask">
+	<form action="save">
+		{foreach key=Index item=MyBudgetPart from=$SM_ARR_MYBUDGET}
+		{if $MyBudgetPart>0 || $SM_ARR_HISBUDGET.$Index>0}
+		<div id="{$Index}" class="fadable clearfix">
+			<div class="fl_left avails">
+				<span class="label apst_blue">{$Index|replace:"HAS":""|strtolower|ucfirst}</span>
+				<input maxlength="7" type="text" class="mine" value="{if $MyBudgetPart>-1}{$MyBudgetPart}{else}0{/if}" />
+				<a class="push_right apst_right apst_pink" href="#"></a>
+			</div>
+			<div class="fl_left budget-fader">
+				<a href="#" class="fader-knob"></a>
+			</div>
+			<input type="hidden" class="summary" value="{if $MyBudgetPart>-1}{$MyBudgetPart+$SM_ARR_HISBUDGET.$Index}{else}{$SM_ARR_HISBUDGET.$Index}{/if}"/>
+			<div class="fl_right subbudget">
+				<span class="label apst_blue">{$Index|replace:"HAS":""|strtolower|ucfirst}</span>
+				<input maxlength="7" type="text" class="his" value="{$SM_ARR_HISBUDGET.$Index}" />
+				<a class="push_left apst_left apst_pink" href="#"></a>
+			</div>
+		</div>
+		{/if}
+		{/foreach}
+		<p>
+			<a id="transfer-budget" class="fl_left apst_button_mid" href="#">Perform transaction</a><a id="close-view" class="fl_right apst_button_mid" href="#">Close detail view</a>
+		</p>
+	</form>
+</div>

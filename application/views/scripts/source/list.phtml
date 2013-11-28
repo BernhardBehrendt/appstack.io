@@ -1,0 +1,8 @@
+<option checked="checked" value="<?php echo $this->iInitNo; ?>"><?php echo $this->sInitText ?></option>
+<?php
+
+foreach($this->options as $iValue => $sText){
+	echo '<option value="'.$iValue.'">'.$sText.'</option>';
+}
+
+?>

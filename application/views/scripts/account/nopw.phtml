@@ -1,0 +1,19 @@
+<?php
+echo $this -> sPage;
+if (isset($_REQUEST['return']) && $_REQUEST['return'] == 1) {
+?>
+<br/>
+redirect...
+<script type="text/javascript"><?php
+echo 'var rd="' . $_SERVER['HTTP_REFERER'] . '";';
+?>
+	function redirect() {
+		setTimeout("location.href = rd;", 1500);
+	}
+
+	redirect();
+
+</script>
+<?php
+}
+?>

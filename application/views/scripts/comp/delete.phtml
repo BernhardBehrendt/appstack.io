@@ -1,0 +1,17 @@
+<script type="text/javascript">
+    <?php
+		echo "openDialog('warning', '".$this->sMessage."', '', 'Ok', 'Abort', true, false);";
+    	echo 'sRequestSender = "close";';
+    ?>
+	$('#overflow_middle #metas_idmeta_<?php echo $this->MetaDelete; ?>').remove();
+	getAreaData('meta/index', 'meta');
+
+	$('#overflow_middle').css('background-color', '#333');
+
+    $('#comp .head_form .area, #comp .head_form .add, #source').fadeOut(250);
+    $('#choosen_comp_name, #choosen_comp_source, #save_comp, #restore_comp').fadeIn(250);
+    $('#comp .controll_panel .head_form .close_comp').fadeIn(250, function(){
+        $('#overflow_middle').css('margin-top', Math.floor($('#comp .controll_panel').height() + 5) + 'px');
+    });
+	setTimeout(function(){$('#confirmed').trigger('click');}, 1000);
+</script>

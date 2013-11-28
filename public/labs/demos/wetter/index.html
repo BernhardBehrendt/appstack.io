@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<title>{our software demo _page}</title>
+		<style type="text/css">
+			.clearfix:after {
+				content: ".";
+				display: block;
+				clear: both;
+				visibility: hidden;
+				line-height: 0;
+				height: 0;
+			}
+			.clearfix {
+				display: inline-block;
+			}
+			html[xmlns] .clearfix {
+				display: block;
+			}
+			* html .clearfix {
+				height: 1%;
+			}
+			body {
+				background-color: #222;
+				color: #333;
+				font-family: Georgia;
+				font-size: 14px;
+				margin:0 auto;
+				padding:0;
+			}
+			.tweet {
+				width:800px;
+				border-radius:10px;
+				border:solid 2px;
+				margin:0 auto;
+				margin-bottom:10px;
+				padding:5px;
+				min-height:48px;
+				opacity:0.7;
+			}
+			.tweet img {
+				border-radius:10px;
+				margin-right:20px;
+				margin-left:10px;
+				float:left;
+			}
+			#loader {
+				margin-left:10px;
+			}
+			#demonstration {
+				background-color: #444;
+				border:solid 1px #ccc;
+				border-left:none;
+				border-right:none;
+				height:80px;
+			}
+			.day {
+				min-width:66px;
+				max-width:230px;
+				height:66px;
+				margin:5px;
+				border:solid 2px #333;
+				float:left;
+				background-color: #fff;
+				border-radius: 12px;
+				opacity:0.8;
+				overflow: hidden;
+			}
+			.day_weather_img {
+				margin-left:14px;
+				margin-top:14px;
+			}
+			.day_name {
+				margin-left:5px;
+				margin-top: 0px;
+				font-size: 9px;
+			}
+			.day_temp {
+				font-size: 16px;
+				font-weight: bold;
+				margin-top:-55px;
+				margin-left:5px;
+				text-align: left;
+			}
+			.day_info {
+				background: none repeat scroll 0 0 #000000;
+				border-color: #333333;
+				border-style: solid solid solid none;
+				border-width: 2px 2px 2px medium;
+				height: 64px;
+				margin-left: 58px;
+				margin-top: -12px;
+				width: 200px;
+				color:#ccc;
+				padding-top:2px;
+				-moz-border-radius-topright: 10px;
+				-moz-border-radius-bottomright: 10px;
+				display:none;
+				opacity:0.9;
+			}
+			.day_info span {
+				display:block;
+				margin-bottom:3px;
+				margin-left:5px;
+				font-family: Verdana;
+				font-size:11px;
+				color:#fff;
+			}
+			#location {
+				width:150px;
+				height:20px;
+				border:solid 1px #ccc;
+				padding 5px;
+				padding-left:3px;
+				color:#ccc;
+				font-size:14px;
+				background-color:#333;
+				margin-bottom:5px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="content">
+			<h1>{check weather}</h1>
+			<input type="text" value="City/PLZ" id="location" /><img id="loader" src="loader.gif"/>
+			<div id="demonstration" class="clearfix">
+			</div>
+		</div>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="../../api/languages/jquery/askapi.jquery.js"></script>
+		<script type="text/javascript" src="js/functions.js"></script>
+		<script type="text/javascript" src="js/main.js"></script>
+	</body>
+</html>
+

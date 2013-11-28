@@ -1,0 +1,17 @@
+$('{$SM_STR_CHART_TARGET}').prepend('<h3>Current week{$SM_ARR_CHARTCONF.popuptext} operations</h3><div id="{$SM_STR_CHARTID}" style=""></div>');
+{literal}
+var oChartConf = {};
+oChartConf.color = {};
+{/literal}
+oChartConf.color.hue = {$SM_ARR_CHARTCONF.hue};
+oChartConf.color.saturation = {$SM_ARR_CHARTCONF.saturation};
+oChartConf.color.brightness = {$SM_ARR_CHARTCONF.brightness};
+
+oChartConf.width = {$SM_ARR_CHARTCONF.width};
+oChartConf.height = {$SM_ARR_CHARTCONF.height};
+oChartConf.labels = new Array({$SM_ARR_CHARTCONF.labels});
+oChartConf.data = new Array({$SM_ARR_CHARTCONF.data});
+oChartConf.unit = '{$SM_ARR_CHARTCONF.unit}';
+oChartConf.popuptext = '{$SM_ARR_CHARTCONF.popuptext}';
+
+$('#{$SM_STR_CHARTID}').lineChart(oChartConf);

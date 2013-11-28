@@ -1,0 +1,40 @@
+<div class="table" id="subaccounts">
+{foreach key=Index item=User from=$SM_A_USERS}
+{if $Index==0}
+<div class="clearfix row labels apst_pink">
+	<div class="fl_left name label">Username</div>
+	<div class="fl_left mail label">E-Mail</div>
+	<div class="fl_left created label">Created</div>
+	<div class="fl_left lastlogin label">Last Login</div>
+	{if isset($User.FREEZE)}
+	<div class="fl_left freeze label">Freeze</div>
+	{/if}
+	{if isset($User.TRANSFER)}
+	<div class="fl_left transfer label">Transfer</div>
+	{/if}
+</div>
+{/if}
+{if ($Index%2)==0}
+{assign var=zebra value="zeb"}
+{else}
+{assign var=zebra value="ra"}
+{/if}
+<div id="{$User.UID}" class="clearfix row {$zebra}">
+	<div class="fl_left name">{$User.NAME}</div>
+	<div class="fl_left mail"><a href="mailto:{$User.MAIL}"></a></div>
+	<div class="fl_left created"><strong>{$User.CREATED|replace:" ":"</strong><br/>"}</div>
+	<div class="fl_left lastlogin apst_center">{$User.LASTLOGIN}</div>
+	{if isset($User.FREEZE)}
+	<div class="fl_left freeze"><a href="#"></a></div>
+	{/if}
+	{if isset($User.TRANSFER)}
+	<div class="fl_left transfer"><a href="#"></a></div>
+	{/if}
+</div>
+{/foreach}
+</div>
+{if $SM_I_USERS>$SM_I_PERPAGE}
+{section name=foo start=0 loop=(($SM_I_USERS/$SM_I_PERPAGE)|ceil) step=1}
+  <a href="{$SM_I_LIMITATION}?list_index={($smarty.section.foo.index*$SM_I_PERPAGE)}" class="pages limit {if ($smarty.section.foo.index*$SM_I_PERPAGE)==$SM_I_INDEX}apst_pink{/if}">{$smarty.section.foo.index+1}</a>
+{/section}
+{/if}

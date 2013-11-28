@@ -1,0 +1,15 @@
+<script type="text/javascript">
+    sRequestSender = 'close';
+    changeConfirmationHead('<?php echo $this->Headline;?>');
+    changeConfirmationMain('');
+    hideConfirmationBtnRed();
+    // Unknown rotation in array normaly it must be on first key no. 2 (layers[2][3])
+
+    $('#cat_<?php echo $this->updateCategory; ?> .inner_contain .composites_num').text(parseInt($('#cat_<?php echo $this->updateCategory; ?> .inner_contain .composites_num').text()) - 1);
+	var sMarginTop = $('.composite:eq(0)').css('margin-top');
+	$('#composite_<?php echo $this->deleteComp;?>').remove();
+	$('.composite:eq(0)').css('margin-top', sMarginTop);
+	if($('#complist .composite').length==0){
+		$('.complist_close').trigger('click');
+	}
+</script>

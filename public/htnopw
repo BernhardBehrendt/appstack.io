@@ -1,0 +1,81 @@
+## Sperre hier mal böse IP adressen aus solange wir keine effektivere abwehr haben
+#### DENY TESTS
+
+#### WORDPRESS-SPAM
+deny from 79.172.201.152
+deny from 163.150.10.208
+
+
+#### VERSUCHT CODE IN ROUDCUBE EINZUSCHLEUSEN
+deny from 38.111.240.2
+
+
+#### PHPMYADMIN SCANNER
+deny from 121.12.161.18
+deny from 88.191.70.74
+deny from 80.191.68.148
+deny from 193.170.124.252
+deny from 64.79.77.210
+deny from 200.171.152.233
+deny from 89.215.18.75
+deny from 190.25.132.95
+deny from 79.172.60.68
+deny from 81.74.38.142
+
+
+#### DFIND
+deny from 85.114.141.200
+deny from 81.25.57.70
+deny from 95.66.187.188
+deny from 89.163.146.36
+deny from 187.45.214.10
+deny from 212.156.58.158
+deny from 62.103.39.74
+deny from 189.126.109.215
+deny from 82.196.2.10
+deny from 91.36.92.0/24
+deny from 95.25.247.133
+deny from 174.120.15.74
+deny from 72.51.60.243
+deny from 174.120.15.74
+deny from 216.121.89.179
+deny from 62.141.46.179
+deny from 217.26.72.29
+deny from 91.121.93.10
+deny from 77.104.217.233
+deny from 61.178.187.181
+deny from 69.72.173.98
+deny from 87.98.229.192
+deny from 61.129.14.20
+deny from 85.92.128.185
+deny from 204.187.100.50
+deny from 123.172.6.214
+deny from 74.50.100.158
+deny from 69.64.56.208
+
+
+#### Komische Proxy-Domains
+deny from 58.218.204.110
+
+
+#AuthUserFile /var/www/dev.appstack.io/trunk/public/.htpasswd
+#AuthGroupFile /dev/null
+#AuthName "Password Protected Area"
+#AuthType Basic
+
+Options +Indexes
+
+#x<limit GET POST>
+#require valid-user
+#</limit>
+
+
+RewriteEngine On
+
+
+
+RewriteCond %{REQUEST_FILENAME} -s [OR]
+RewriteCond %{REQUEST_FILENAME} -l [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^.*$ - [NC,L]
+RewriteRule ^.*$ index.php [NC,L]

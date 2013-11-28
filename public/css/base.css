@@ -1,0 +1,246 @@
+/*
+ * This is a clean master CSS file which define base elements colors background borders etc.
+ * 
+ * Please note:
+ * Each configuration has to match on all pages so dont use any id (#myItem)
+ * or classes which specify an unique area
+ * 
+ * The use of this clean pattern makes the software better administratable and faster
+ * changes in base design are possible.
+ * 
+ * IMPORTANT //////////////////////////
+ * 
+ * MARK ALL CHANGES IN HISTORY ON DOCUMENTATION FOOTER (YOU can choose Modified, Changed, Fixed)
+ * 
+ * Modified		A general modification on document [new features]
+ * Changed		A general change on document [eg. changing colors]
+ * Fixed		A solved proplem [eg. cross browser compatibility new features]
+ * 
+ * @author Bernhard Bezdek
+ * @copyright Bernhard Bezdek / Dominik Kloke (Tagitall solutions 2010)
+ * 
+ * Created:		09-28-2010	Benrhard Bezdek		(Added masterdefinitions and deletet them in back_main.css)
+ * Modified		09-28-2010
+ * Modified		10-24-2010	Bernhard Bezdek		(added new Textdecoration class (.tia_nodeco, a for textdecoration:none
+ * 												 .tia_underline, a:hover)
+ * 
+ * Modified:	MM-DD-YYYY	YOURNAME		DESCRIPTION
+ * Changed:		MM-DD-YYYY	YOURNAME		DESCRIPTION
+ * Fixed:		MM-DD-YYYY	YOURNAME		DESCRIPTION
+ */ /*CSS CLEARFIX*/
+html[xmlns] .clearfix,.clearfix:after,.head_form,.head,.item,.item span
+	{
+	display: block;
+}
+
+.clearfix:after {
+	content: ".";
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+
+.clearfix {
+	display: inline-block;
+}
+
+* html .clearfix {
+	height: 1%;
+}
+
+/*BASE CONFIGURATIONS*/
+body,html,* {
+	margin: 0;
+	padding: 0;
+}
+
+/*TAG BASE CONFIGURATION*/ /*BODY*/
+body {
+	background-color: #aaa;
+	font-size: 14px;
+}
+
+* {
+	outline: none;
+}
+
+/*Cursor*/
+.tia_cursor_none {
+	cursor: default;
+}
+
+/*HEADLINES*/
+h1 {
+	font-size: 22px;
+	margin-bottom: 10px;
+}
+
+h2 {
+	font-size: 18px;
+}
+
+h3 {
+	font-size: 16px;
+	color: #ff0084;
+}
+
+h4 {
+	font-size: 14px;
+}
+
+h5 {
+	font-size: 12px;
+}
+
+/*BASE CONFIGURATION CLASSSES*/ /*Floating*/
+.fl_left {
+	float: left;
+}
+
+.fl_right {
+	float: right;
+}
+
+.fl_none {
+	float: none;
+}
+
+/*display settings*/
+.dn {
+	display: none;
+}
+
+.db {
+	display: block;
+}
+
+.di {
+	display: inline;
+}
+
+.tia_font_fam {
+	font-family: sans-serif;
+}
+
+label {
+	font-family: sans-serif;
+}
+
+/*Fontsizes*/
+.tia_small {
+	font-size: 11px;
+}
+
+.tia_very_small {
+	font-size: 9px;
+}
+.tia_mid {
+	font-size: 14px;
+}
+
+.tia_big {
+	font-size: 16px;
+}
+
+/*Fontstyles*/
+.tia_italic {
+	font-style: italic;
+}
+
+.tia_bold {
+	font-weight: bold;
+}
+
+/*Overline underling troughline*/
+.tia_overline {
+	text-decoration: overline;
+}
+
+.tia_troughline {
+	text-decoration: line-through;
+}
+
+.tia_underline,a:hover {
+	text-decoration: underline;
+}
+
+.tia_nodeco,a {
+	text-decoration: none;
+}
+
+/*Text orientation*/
+.tia_center {
+	text-align: center;
+}
+
+/*colorisation*/
+.tia_black {
+	color: #000;
+}
+
+.tia_white {
+	color: #fff;
+}
+
+.tia_darkwhite {
+	color: #efefef;
+}
+
+.tia_dark_gtey {
+	color: #333;
+}
+
+.tia_mid_grey {
+	color: #666;
+}
+
+.tia_light_grey {
+	color: #999;
+}
+
+.tia_lighter_grey {
+	color: #ccc;
+}
+
+.tia_pink {
+	color: #ff0084;
+}
+
+.tia_blue {
+	color: #0063dc;
+}
+
+.tia_orange {
+	color: #FF9000;
+}
+
+.tia_yellow {
+	color: #F3DA05;
+}
+
+.tia_green {
+	color: #0f0;
+}
+
+.tia_red {
+	color: #f00;
+}
+
+/*BORDERS*/
+.tia_border_none {
+	border: none !important;
+}
+
+.tia_border_red{
+	border:1px solid #f00;
+}
+
+/*INPUT ELEMENTS BASE DEFINITIONS*/
+input::-moz-focus-inner {
+	border: 1px dotted transparent;
+}
+
+input[type=submit] {
+	cursor: pointer;
+}

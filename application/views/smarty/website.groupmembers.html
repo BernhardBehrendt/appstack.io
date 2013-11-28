@@ -1,0 +1,12 @@
+{assign var=zebra value="zeb"}
+{foreach key=Index item=User from=$SM_A_USERS}
+<div id="usr_{$Index}" class="{$zebra} clearfix rowset">
+	<span class="name fl_left">{$User.name}</span>
+	<a href="#" class="{if isset($User.member)}nomember{else}member{/if} dn fl_left"></a>
+</div>
+{if $zebra=='zeb'}
+{assign var=zebra value="ra"}
+{else}
+{assign var=zebra value="zeb"}
+{/if}
+{/foreach} 

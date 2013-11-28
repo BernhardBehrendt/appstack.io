@@ -1,0 +1,29 @@
+<div id="grpconfig" class="clearfix">
+	<form id="searchspace" class="clearfix">
+		<input id="searchexpr" class="fl_left" type="text" />
+		<label for="searchexpr" class="fl_left">Enter expression here.</label>
+	</form>
+	<div id="nsconf" class="fl_left">
+		<div id="nslist">
+			<?php
+
+			echo $this -> namespaces;
+			?>
+		</div>
+		<div id="paging" class="clearfix">
+			<a class="slidens fl_left" href="#"></a>
+		</div>
+		<div id="grprights" class="clearfix">
+			<?php
+			if (isset($this -> rights)) {
+				
+				foreach ($this->rights as $oRow) {
+					echo '<input '.(isset($this->aGroupRights[$oRow->idright])?'checked="checked"':'').' value="' . $oRow -> idright . '" type="checkbox" name="' . $oRow -> name . '" id="right_' . $oRow -> name . '" class="fl_left"/>';
+					echo '<label for="right_' . $oRow -> name . '" class="fl_left' . (($oRow -> name == 'recursive') ? ' apst_pink' : '') . '">' . $oRow -> name . '</label>';
+				}
+			}
+			?>
+		</div>
+	</div>
+	<div id="catconf" class="fl_left"></div>
+</div>

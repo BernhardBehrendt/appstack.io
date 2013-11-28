@@ -1,0 +1,13 @@
+{assign var=zebra value="zeb"}
+{foreach key=Index item=Namespace from=$SM_A_NAMESPACES}
+<div id="ns_{$Index}" class="{$zebra} clearfix rowset">
+	<span class="name fl_left">{$Namespace.name}</span>
+	<a href="#" class="{if isset($Namespace.bind)}unbind{else}bind{/if} dn fl_left"></a>
+	<a href="#"{if !isset($Namespace.bind)} style="display:none;"{/if} class=" configure fl_right apst_blue">configure</a>
+</div>
+{if $zebra=='zeb'}
+{assign var=zebra value="ra"}
+{else}
+{assign var=zebra value="zeb"}
+{/if}
+{/foreach} 

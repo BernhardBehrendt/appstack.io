@@ -1,0 +1,14 @@
+<script type="text/javascript">
+    sRequestSender = 'close';
+    changeConfirmationHead('<?php echo $this->Headline;?>');
+    changeConfirmationMain('<strong><?php echo $this->Message;?></strong>');
+    hideConfirmationBtnRed();
+    // Unknown rotation in array normaly it must be on first key no. 2 (layers[2][3])
+    $("#comp .controll_panel .head_form input[name='name_field']").val(layers[3][3]);
+    
+    $('#cat_<?php echo $this->updateCategory; ?> .inner_contain .composites_num').text(parseInt($('#cat_<?php echo $this->updateCategory; ?> .inner_contain .composites_num').text()) + 1);
+    
+    $('#source').val('Source');
+    $('.complist_close').trigger('click');
+    
+</script>

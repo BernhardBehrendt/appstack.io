@@ -1,0 +1,14 @@
+<script type="text/javascript">
+    sRequestSender = 'close';
+    changeConfirmationHead('<?php echo $this->Headline;?>');
+    changeConfirmationMain('<strong><?php echo $this->Message;?></strong>');
+    
+    // Unknown rotation in array normaly it must be on first key no. 2 (layers[2][3])
+    $("#cats .head_form input[name=name_field]").val(layers[3][3]);
+	hideConfirmationBtnRed();
+    getAreaData('cats/index', 'cats');
+    iTmp = iCurCatIn;
+    window.setTimeout(function(){
+        moveToCat(iCurCatIn)
+    }, 1500);
+</script>

@@ -1,0 +1,10 @@
+<script type="text/javascript">
+	sRequestSender = 'close';
+	changeConfirmationHead('<?php echo $this->Headline;?>');
+	changeConfirmationMain('<strong><?php echo $this->Message;?></srtong>');
+	hideConfirmationBtnRed();
+	// Unknown rotation in array normaly it must be on first key no. 2 (layers[2][3])
+	$("#meta .head_form input[name=name_field]").val(layers[3][3]);
+	getAreaData('meta/index', 'meta');
+	
+</script>

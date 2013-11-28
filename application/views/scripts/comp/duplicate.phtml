@@ -1,0 +1,15 @@
+<script type="text/javascript">
+    sRequestSender = 'close';
+    changeConfirmationHead('<?php echo $this->Headline;?>');
+    changeConfirmationMain('<strong><?php echo $this->Message;?></strong>');
+    hideConfirmationBtnRed();
+    bLockCompDuplicate = false;
+    <?php 
+    if($this->updateCategory){
+    ?>	
+   		$('#cat_<?php echo $this->updateCategory; ?> .inner_contain .composites_num').text(parseInt($('#cat_<?php echo $this->updateCategory; ?> .inner_contain .composites_num').text()) + 1);
+    	$('#cat_<?php echo $this->updateCategory; ?> .inner_contain .catops .cat_comps').trigger('click');
+	<?php
+	}
+	?>
+</script>

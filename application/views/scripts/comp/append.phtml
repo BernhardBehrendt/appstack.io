@@ -1,0 +1,13 @@
+<script type="text/javascript">
+    <?php
+    if($this->bErrors){
+		echo "openDialog('warning', '".$this->sErrorMessage."', '', 'Ok', 'Abort', true, false);";
+    	echo 'sRequestSender = "close";';
+    }
+
+	if(isset($this->iComposite)){
+		echo "loadCompMetas($this->iComposite);";
+    }
+	?>
+
+</script>

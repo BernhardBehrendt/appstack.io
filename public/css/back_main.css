@@ -1,0 +1,702 @@
+/*
+ * This is a master CSS file of tagitall software
+ *  Base definition are made in base.css (in this directory)
+ *
+ * IMPORTANT //////////////////////////
+ *
+ * MARK ALL CHANGES IN HISTORY ON DOCUMENTATION FOOTER (YOU can choose Modified, Changed, Fixed)
+ *
+ * Modified		A general modification on document [new features]
+ * Changed		A general change on document [eg. changing colors]
+ * Fixed			A solved proplem [eg. cross browser compatibility new features]
+ *
+ * @author Dominik Kloke
+ * @copyright Bernhard Bezdek / Dominik Kloke (Tagitall solutions 2010)
+ *
+ * Created:		06-24-2010	Dominik Kloke		(Added masterdefinitions and deletet them in back_main.css)
+ * Modified		09-28-2010	Bernhard Bezdek		(Outsourced master definition in base .css at  the moment only color definitions]
+ *
+ * Modified:	MM-DD-YYYY	YOURNAME		DESCRIPTION
+ * Changed:		MM-DD-YYYY	YOURNAME		DESCRIPTION
+ * Fixed:		MM-DD-YYYY	YOURNAME		DESCRIPTION
+ */
+input::-moz-focus-inner {
+	border: 1px dotted transparent;
+}
+
+.area_loader {
+	margin: 30px 0 30px 140px;
+}
+
+/* Parts */
+#cats, #comp, #meta, #groups {
+	position: absolute;
+	background-color: rgba(48, 48, 48, 0.6);
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border: 3px solid #666;
+	width: 300px;
+	top: 10px;
+	height: 92%;
+	min-height: 520px;
+	overflow: hidden;
+}
+
+.controll_panel {
+	background: #434343;
+	padding: 5px 5px 0 0;
+	position: absolute;
+	top: -2px;
+	right: -2px;
+	width: 299px;
+	border-top: solid 2px #515151;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	-moz-border-radius-bottomright: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	-webkit-border-bottom-right-radius: 10px;
+	-webkit-border-bottom-left-radius: 10px;
+	z-index: 10000;
+	margin-bottom: 300px;
+}
+
+.scroll_panel {
+	background: #434343;
+	padding: 5px 5px 5px 0;
+	position: absolute;
+	bottom: -2px;
+	right: -2px;
+	width: 299px;
+	border-top: solid 2px #515151;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	-moz-border-radius: 0 0 10px 10px;
+	-webkit-border-bottom-right-radius: 10px;
+	-webkit-border-bottom-left-radius: 10px;
+}
+
+.scroll_panel input {
+	height: 17px;
+	margin-left: 9px;
+	padding: 1px 0 0 3px;
+	border-right: 1px solid #EFEFEF;
+	width: 144px;
+	border-bottom-right-radius: 10px;
+	border-top-right-radius: 10px;
+	-moz-border-radius: 0 10px 10px 0;
+	-webkit-border-radius: 0 10px 10px 0;
+}
+
+#cats {
+	left: 20px;
+	z-index: 1;
+}
+
+#comp {
+	left: 332px;
+	z-index: 2;
+}
+
+#meta {
+	left: 644px;
+	z-index: 3;
+}
+
+#groups {
+	left: 956px;
+	z-index: 4;
+}
+
+#confirm {
+	background-color: rgba(0, 0, 0, 0.8);
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	z-index: 100000;
+	display: none;
+}
+
+img.msg_window_loader {
+	margin: 57px 0 0 75px;
+	display: none;
+}
+
+#catinfo .row_name, #catinfo .row_value {
+	width: 255px;
+	margin-bottom: 11px;
+	padding-bottom: 13px;
+	border-bottom: 1px solid #ccc;
+}
+
+#catinfo .row_value label {
+	padding: 15px;
+}
+
+#message {
+	position: absolute;
+	left: 50%;
+	top: 20px;
+	width: 800px;
+	height: 400px;
+	margin-left: -400px;
+}
+
+#message_type {10px;
+	margin: 17px 10px 0 0;
+	opacity: 0.8;
+}
+
+.target_reference {
+	opacity: 0.2;
+}
+
+#message_textarea {
+	width: 525px;
+	background-color: #111;
+	border: 1px dotted #999;
+	margin: 25px 0px 0px 12px;
+	padding: 15px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+.confirm, .abort {
+	border: none;
+	margin-top: 60px;
+	outline: none;
+	cursor: pointer;
+	float: right;
+}
+
+.confirm, .area, .area_long, #message_type {
+	float: left;
+}
+
+.scroll_down, .scroll_up, .save, .go_up, .cut, .add_cat, .delete, .edit, .paste, .add, .tidyDesk, .restore_comp, .save_comp, .insert_comp {
+	float: right;
+	width: 25px;
+	height: 25px;
+	border: none;
+	cursor: pointer;
+	background-color: rgba(0, 0, 0, 0);
+}
+
+.add {
+	margin-right: 7px;
+}
+
+.tidyDesk, .add {
+	border: 1px solid #efefef;
+}
+
+.tidyDesk {
+	border-bottom-right-radius: 10px;
+	border-top-right-radius: 10px;
+	-moz-border-radius: 0 10px 10px 0;
+	-webkit-border-radius: 0 10px 10px 0;
+}
+
+.head span {
+	margin: 0 0 4px 0;
+}
+
+.head_form, .head {
+	border-bottom: 3px solid #000;
+	padding: 10px;
+	width: 284px;
+}
+
+.head_form {
+	padding: 10px 10px 10px 8px;
+}
+
+.items {
+	overflow: hidden;
+}
+
+.item {
+	background: url('../img/pattern.png') repeat;
+	border: solid 1px #0D81DF;
+	border-left: none;
+	border-right: none;
+	padding: 6px 5px 15px 5px;
+	margin-bottom: 10px;
+	min-height: 40px;
+	height: auto;
+}
+
+.item span {
+	margin: 0 0 5px 3px;
+}
+
+.item_description {
+	-moz-border-radius-topright: 6px;
+	background: #1B1D26 none repeat scroll 0 0;
+	border: solid 1px #999;
+	border-bottom: none;
+	margin-top: 5px;
+	padding: 2px 0 1px 3px;
+	width: 162px;
+	-moz-border-radius-topright: 6px;
+	border-top-right-radius: 6px;
+	-webkit-border-top-right-radius: 6px;
+	overflow: hidden;
+}
+
+.overflow_right {
+	padding-top: 98px;
+}
+
+#overflow_middle {
+	height: 78%;
+	margin-top: 232px;
+	padding-bottom: 50px;
+}
+
+/* Button Classes & Effects */
+.item input[type = submit] {
+	margin-top: -1px;
+}
+
+.area:focus, .area_long:focus {
+	color: #efefef;
+}
+
+.area, .area_long {
+	border-left: 1px solid #efefef;
+}
+
+.area, .area_long {
+	border-top: 1px solid #efefef;
+}
+
+.area, .area_long {
+	border-bottom: 1px solid #efefef;
+}
+
+.area, .area_long {
+	height: 14px;
+	padding: 5px 0 4px 3px;
+	background: url('../img/area_pattern.png');
+}
+
+.area_long {
+	width: 276px;
+	border-right: solid 1px #fff;
+}
+
+.area {
+	border-right: solid 1px #fff;
+	width: 212px;
+}
+
+.value {
+	background-color: rgba(0, 0, 0, 0.4);
+	border: 1px solid #efefef;
+	height: 14px;
+	width: 178px;
+	padding: 3px 0 3px 3px;
+	margin: -5px 0 5px 3px;
+}
+
+/* Composites */
+
+#complist {
+	border: solid 2px #666;
+	border-left: none;
+	-moz-border-radius-topright: 10px;
+	-moz-border-radius-bottomright: 10px;
+	overflow: hidden;
+}
+
+#complist .scroll_panel {
+	display: none;
+	width: 306px;
+}
+
+.composite_list {
+	background-color: #111;
+	padding: 3px 5px;
+	color: #fff;
+	width: 298px;
+}
+
+.composite_list:hover {
+	background-color: #333;
+	color: #ff0;
+}
+
+.complist_close {
+}
+
+.insert_comp {
+	margin-top: -7px;
+}
+
+.console iframe {
+	border: none;
+	width: 850px;
+	height: 533px;
+	margin-left: 16px;
+}
+
+.comp_open {
+	width: 26px;
+	height: 26px;
+	border: solid 2px #0D81DF;
+	background-color: #333;
+	-moz-border-radius: 9px;
+	margin: 13px 20px 0 0;
+}
+
+.comp_open:hover {
+	border: solid 2px #444;
+	background-color: #0D81DF;
+}
+
+.compsrc {
+	width: 200px;
+	color: #0063DC;
+}
+
+.source_relocate {
+	background-color: #333;
+	border: 2px solid #0f0;
+	border-radius: 9px 9px 9px 9px;
+	height: 13px;
+	width: 16px;
+}
+.source_relocate:hover {
+	background-color: #0f0;
+	border-color: #333;
+}
+
+.close_comp {
+	width: 25px;
+	height: 25px;
+	background-color: #00f;
+}
+
+#choosen_comp_name {
+	margin: 5px 0 0 5px;
+	text-decoration: underline;
+}
+
+#preview_source image {
+	opacity: 0.6;
+}
+
+.composite {
+	background: url('../img/pattern.png');
+	border: 1px solid #FF0084;
+	padding: 6px 5px 10px 5px;
+	margin: 0px 0 3px 0;
+	height: 50px;
+	-moz-border-radius: 8px;
+	overflow: hidden;
+}
+
+.composite_value {
+	width: 200px;
+	border: none;
+	background: none;
+	outline: none;
+	padding: 5px 5px 5px 0px;
+}
+
+.C_src {
+	width: 400px;
+}
+
+.target_reference, .C_src {
+	color: #00ff00;
+	width: 400px;
+	margin: 25px 0 0 -80px;
+}
+
+.target_reference {
+	margin: 25px 0 0 -60px;
+	height: 30px;
+	padding: 6px;
+}
+
+#src, #config_source_xpath input, .comprename {
+	height: 20px;
+}
+
+#config_source_xpath input {
+	margin: 10px 0 0 10px;
+	padding-left: 3px;
+	width: 189px;
+	color: #00FF00;
+}
+
+.comprename {
+	margin: 25px 0 0 -232px;
+	width: 400px;
+	padding-left: 3px;
+}
+
+.select_mode {
+	margin-right: 5px;
+}
+
+.mval, .mvalname, .catrename {
+	width: 238px;
+	height: 19px;
+	font-size: 14px;
+}
+
+.tia_select, .mval, .mvalname, .catrename, .tia_select option, .C_src, .meta_values, .target_reference, #config_source_xpath input, .comprename {
+	background-color: #0F4153;
+}
+
+.mval, .mvalname, .catrename, .target_reference, .C_src, #config_source_xpath input {
+	border: solid 2px #999;
+}
+
+.mval, .mvalname, .tia_select, .catrename {
+	margin: 5px;
+	padding: 3px 5px;
+}
+
+.meta_values {
+	border: solid 1px #666;
+	width: 520px;
+	margin: 10px 0 0;
+	height: 30px;
+	padding: 6px;
+}
+
+.tia_select {
+	border: solid 1px #666;
+	width: 472px;
+	margin: 10px 0 0 43px;
+	height: 30px;
+	padding-top: 6px;
+}
+
+.tia_select option, .meta_values option {
+	padding: 3px 5px;
+	margin: 5px 0;
+	background-color: #0F4153;
+}
+
+/*Styles for the categories*/
+.inner_contain {
+	/* height: 80px;*/
+	width: 220px;
+	border-right: solid 1px #0D81DF;
+	border-left: solid 1px #0D81DF;
+}
+
+.cat_info, .comp_info {
+	width: 106px;
+	height: 20px;
+	border-bottom: solid 1px #0d2d55;
+	padding: 6px 0 0 2px;
+}
+
+.cat_info_right, .comp_info_right {
+	background: rgba(0, 0, 0, 0.3);
+	color: #fff;
+}
+
+.cat_info_left, .comp_info_left {
+	background: rgba(0, 0, 0, 0.4);
+}
+
+.category {
+	float: left;
+	margin-bottom: 2px;
+	border-bottom: solid 1px #000;
+	background: url('../img/pattern.png');
+	width: 300px;
+}
+
+#catmatrix {/*DYNAMIC WIDTH (SUM LEVEL * innerWidth Cat window)*/
+	width: 900px;
+}
+
+.source_value input, .configure_cat input {
+	margin: 0 30px 0 0;
+	padding: 0;
+}
+
+.source_value label, .configure_cat label {
+	width: 475px;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+	border-bottom: 1px solid #fff;
+}
+
+#direction_emptycat {
+	margin-bottom: 20px;
+}
+
+.before_behind {
+	width: 520px;
+	padding-top: 10px;
+}
+
+.up, .down {
+	color: #8FECFF;
+	text-align: center;
+	font-size: 11px;
+	width: 39px;
+	height: 80px;
+	overflow: hidden;
+	background: rgba(0, 0, 0, 0.1);
+}
+
+.categories {
+	opacity: 0.5;
+}
+
+.up {
+	margin-right: 1px;
+}
+
+.down {
+	/* border-left: solid 1px #0D81DF;*/
+}
+
+.depth {
+	float: left;
+	width: 300px;
+	height: auto;
+	margin-top: 165px;
+}
+
+.cat_delete, .cat_infos, .cat_comps, .cat_rename, .comp_delete, .comp_infos, .comp_rename, .comp_move, .comp_duplicate {
+	display: block;
+	float: left;
+	border: solid 1px #000;
+}
+
+#new_catname {
+	width: 520px;
+	margin-bottom: 15px;
+}
+
+.treeMapCat {
+	background-color: #333333;
+	background-image: url("../img/pattern.png");
+	border: 2px solid #0055E1;
+	border-radius: 16px 16px 16px 16px;
+	-webkit-border-radius: 16px 16px 16px 16px;
+	-moz-border-radius: 16px 16px 16px 16px;
+	color: #FFFFFF;
+	font-size: 11px;
+	height: 15px;
+	padding: 6px 0 3px 1px;
+	position: absolute;
+	text-align: center;
+	width: 124px;
+}
+
+/* CSS for the Cat tree/ CatMap */
+.treeMapCat:hover {
+	background-color: #222;
+	border-color: #ff007e;
+	background-image: url('../img/pattern2.png');
+	color: #fddf00;
+}
+
+.activeTree {
+	border-color: #ff007e;
+}
+
+#forum {
+	width: 100%;
+}
+
+.pubcat {
+	background-image: url('../img/pattern3.png');
+}
+
+.cat_public, .comp_public {
+	border: solid 1px #00ff00 !important;
+}
+
+.cat_private, .comp_private {
+	border: 1px solid #ff0000 !important;
+}
+
+.filter_sensitivity {
+	/* background: url('/tag_it_all/trunk/public/img/s_default.png') no-repeat;*/
+	width: 28px;
+	height: 18px;
+	display: block;
+	border: solid 1px #fff;
+	border-right: none;
+	margin-left: 42px;
+	margin-right: -9px;
+	float: left;
+	background-position: -5px -448px;
+}
+
+/* Console */
+.console {
+	position: absolute;
+	left: -1240px;
+	top: 50px;
+	z-index: 10000;
+	width: 1255px;
+	height: 570px;
+	background: rgba(0, 0, 0, 0.6);
+	border: 2px solid #666;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	-moz-border-radius-topright: 10px;
+	-moz-border-radius-bottomright: 10px;
+	-webkit-border-top-right-radius: 10px;
+	-webkit-border-bottom-right-radius: 10px;
+}
+
+.c_output {
+	height: 400px;
+	overflow: hidden;
+	width: 1100px !important;
+	color: yellow;
+	margin: 10px;
+	background-color: #333;
+}
+
+.highlight {
+	width: 1100px;
+	height: 385px;
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+.c_input {
+	height: 50px;
+	width: 1100px;
+	background-color: #333;
+	color: yellow;
+	margin: 10px;
+}
+
+.c_plugins {
+	height: 50px;
+	margin: 10px;
+	background-color: green;
+}
+
+/*CSS INIT RULES*/
+div#cats .items .item input[type = text], div#comp .items .item input[type = text], div#meta .items .item input[type = text], div#groups .items .item input[type = text], div#cats .items .item input[class = save], div#comp .items .item input[class = plus], div#comp .items .item input[class = save], div#meta .items .item input[type = text], div#meta .items .item input[class = save], div#groups .items .item input[type = text], div#groups .items .item input[class = save], div#meta .items .item input[class = plus], div#groups .items .item input[class = plus] {
+	display: none;
+}
+#catmap {
+	min-width: 1024px;
+	min-height: 768px;
+}
+body {
+	min-height: 100% !important;
+}

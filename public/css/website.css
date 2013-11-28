@@ -1,0 +1,214 @@
+/*
+ * This is a clean master CSS file which define base elements colors background borders etc.
+ *
+ * Please note:
+ * Each configuration has to match on all pages so dont use any id (#myItem)
+ * or classes which specify an unique area
+ *
+ * The use of this clean pattern makes the software better administratable and faster
+ * changes in base design are possible.
+ *
+ * IMPORTANT //////////////////////////
+ *
+ * MARK ALL CHANGES IN HISTORY ON DOCUMENTATION FOOTER (YOU can choose Modified, Changed, Fixed)
+ *
+ * Modified		A general modification on document [new features]
+ * Changed		A general change on document [eg. changing colors]
+ * Fixed		A solved proplem [eg. cross browser compatibility new features]
+ *
+ * @author Bernhard Bezdek
+ * @copyright Bernhard Bezdek / Dominik Kloke (Tagitall solutions 2010)
+ *
+ * Created:		09-28-2010	Benrhard Bezdek		(Added masterdefinitions and deletet them in back_main.css)
+ * Modified		09-28-2010
+ * Modified		10-24-2010	Bernhard Bezdek		(added new Textdecoration class (.apst_nodeco, a for textdecoration:none
+ * 												 .apst_underline, a:hover)
+ *
+ * Modified:	MM-DD-YYYY	YOURNAME		DESCRIPTION
+ * Changed:		MM-DD-YYYY	YOURNAME		DESCRIPTION
+ * Fixed:		MM-DD-YYYY	YOURNAME		DESCRIPTION
+ */ /*CSS CLEARFIX*/
+html[xmlns] .clearfix, .clearfix:after, .head_form, .head, .item, .item span {
+	display: block;
+}
+.clearfix:after {
+	content: ".";
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+.clearfix {
+	display: inline-block;
+}
+* html .clearfix {
+	height: 1%;
+}
+/*BASE CONFIGURATIONS*/
+body, html, * {
+	margin: 0;
+	padding: 0;
+}
+/*TAG BASE CONFIGURATION*/ /*BODY*/
+body {
+	background-color: #787878;
+	font-size: 12px;
+	letter-spacing: 0.02em;
+}
+* {
+	outline: none;
+}
+a {
+	color:#fff;
+}
+/*Cursor*/
+.apst_cursor_none {
+	cursor: default;
+}
+/*HEADLINES*/
+h1 {
+	font-size: 18px;
+	margin-bottom: 10px;
+	color:#3881DB;
+}
+h2 {
+	font-size: 16px;
+	color:#ff0084;
+	margin:2px 0 10px 0;
+}
+h3 {
+	font-size: 13px;
+	color: #ff0084;
+	margin:5px 0;
+}
+h4 {
+	color: #3881DB;
+	font-size: 13px;
+	margin: 10px 0 3px;
+}
+h5 {
+	font-size: 12px;
+}
+/*BASE CONFIGURATION CLASSSES*/ /*Floating*/
+.fl_left {
+	float: left;
+}
+.fl_right {
+	float: right;
+}
+.fl_none {
+	float: none;
+}
+/*display settings*/
+.dn {
+	display: none;
+}
+.db {
+	display: block;
+}
+.di {
+	display: inline;
+}
+.apst_font_fam {
+	font-family: "Trebuchet MS",Helvetica,Jamrul,sans-serif;
+}
+label {
+	font-family: sans-serif;
+}
+/*Fontsizes*/
+.apst_small {
+	font-size: 12px;
+}
+.apst_very_small {
+	font-size: 9px;
+}
+.apst_mid {
+	font-size: 14px;
+}
+.apst_big {
+	font-size: 16px;
+}
+/*Fontstyles*/
+.apst_italic {
+	font-style: italic;
+}
+.apst_bold {
+	font-weight: bold;
+}
+/*Overline underling troughline*/
+.apst_overline {
+	text-decoration: overline;
+}
+.apst_troughline {
+	text-decoration: line-through;
+}
+.apst_underline, a:hover {
+	text-decoration: none;
+}
+a:hover {
+	color:#0063DC;
+}
+a:active {
+	color:#FF0084;
+}
+.apst_nodeco, a {
+	text-decoration: none;
+}
+/*Text orientation*/
+.apst_center {
+	text-align: center;
+}
+/*colorisation*/
+.apst_black {
+	color: #000;
+}
+.apst_white {
+	color: #fff;
+}
+.apst_darkwhite {
+	color: #efefef;
+}
+.apst_dark_gtey {
+	color: #333;
+}
+.apst_mid_grey {
+	color: #666;
+}
+.apst_light_grey {
+	color: #999;
+}
+.apst_lighter_grey {
+	color: #ccc;
+}
+.apst_pink {
+	color: #ff0084;
+}
+.apst_blue {
+	color: #0e8cf6;
+}
+.apst_orange {
+	color: #FF9000;
+}
+.apst_yellow {
+	color: #F3DA05;
+}
+.apst_green {
+	color: #0f0;
+}
+.apst_red {
+	color: #f00;
+}
+/*BORDERS*/
+.apst_border_none {
+	border: none !important;
+}
+.apst_border_red {
+	border:1px solid #f00;
+}
+/*INPUT ELEMENTS BASE DEFINITIONS*/
+input::-moz-focus-inner {
+	border: 1px dotted transparent;
+}
+input[type=submit] {
+	cursor: pointer;
+}

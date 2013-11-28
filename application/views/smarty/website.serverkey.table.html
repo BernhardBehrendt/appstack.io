@@ -1,0 +1,50 @@
+<div class="table">	
+{foreach key=Index item=Serverkey from=$SM_A_SERVERKEYS}
+{if !isset($tbl_head)}
+
+{assign var=tbl_head value=true}
+<div class="clearfix row labels apst_pink">
+	<div class="fl_left skname label">Application URI</div>
+	<div class="fl_left actokens label">Accesstokens</div>
+	<div class="fl_left view label apst_very_small apst_center">KEYS</div>
+	<div class="fl_left delete label apst_very_small">DELETE</div>
+</div>
+{/if}
+{if ($Index%2)==0}
+{assign var=zebra value="zeb"}
+{else}
+{assign var=zebra value="ra"}
+{/if}
+<div id="{$Index}" class="clearfix row {$zebra}">
+	<div class="fl_left skname">{$Serverkey.application_uri}</div>
+	<div class="fl_left created">{count($Serverkey.access)}</div>
+	<div class="fl_left delete label apst_center"><a href="#" class="skview"></a></div>
+	<div class="fl_left delete label apst_center"><a href="#" class="skdelete"></a></div>
+</div>
+<div class="accesstokens {$zebra} dn">
+	<div class="apst_pink apst_bold fl_left conseclbl">Consumer key:</div><div class="apst_blue fl_left consecval">{$Serverkey.consumer_key}</div>
+	<div class="apst_pink apst_bold fl_left conseclbl">Consumer secret:</div><div class="apst_blue fl_left consecval">{$Serverkey.consumer_secret}</div>
+	{if count($Serverkey.access)>0}
+		{foreach key=Indexb item=Accesskey from=$Serverkey.access}
+		{if ($Indexb%2)==0}
+		{assign var=zebrab value="zeb"}
+		{else}
+		{assign var=zebrab value="ra"}
+		{/if}
+		<div class="fl_left">
+		<div class="apst_pink apst_very_small apst_bold fl_left acctblhd {$zebrab}">Access token</div>
+		<div class="fl_left  actk acctblrw apst_very_small {$zebrab} clearfix"><span class="fl_left">{$Accesskey.access_token}</span> <a class="fl_right acctkdel" href="#"></a></div>
+		
+		<div class="apst_pink apst_very_small apst_bold fl_left acctblhd {$zebrab}">Access secret</div>
+		<div class="fl_left acts acctblrw apst_very_small {$zebrab}">{$Accesskey.access_secret}</div>
+		</div>
+		{/foreach}
+	{/if}
+</div>
+{/foreach}
+</div>
+{if $SM_I_SERVERKEYS>$SM_I_PERPAGE}
+{section name=foo start=0 loop=(($SM_I_SERVERKEYS/$SM_I_PERPAGE)|ceil) step=1}
+  <a href="{$SM_I_LIMITATION}?list_index={($smarty.section.foo.index*$SM_I_PERPAGE)}" class="pages limit {if ($smarty.section.foo.index*$SM_I_PERPAGE)==$SM_I_INDEX}apst_pink{/if}">{$smarty.section.foo.index+1}</a>
+{/section}
+{/if}

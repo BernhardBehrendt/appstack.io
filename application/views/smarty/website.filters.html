@@ -1,0 +1,16 @@
+<h3>Filters</h3>
+<div class="clearfix filter">
+	<form action="{$SM_STR_ACTION}" method="get">
+		<input type="text" name="filter_expr" id="filter_expr" />
+	</form>
+	{foreach key=Index item=Letter from=$SM_A_LETTERS}
+		<a class="letter{if $Letter==$SM_STR_LETTER} apst_pink{/if}" href="{$SM_STR_ACTION}?filter_letter={$Letter}">{$Letter}</a>
+	{/foreach}
+</div>
+<h3>Results per page</h3>
+<div class="clearfix limits">
+	
+	{foreach key=Index item=Limit from=$SM_A_LIMITS}
+		<a class="limit{if $Limit==$SM_I_LIMITATION} apst_pink{/if}" href="{$SM_STR_ACTION}?limit={$Limit}">{$Limit}</a>
+	{/foreach}
+</div>

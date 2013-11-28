@@ -1,0 +1,8 @@
+<script type="text/javascript">
+    sRequestSender = 'close';
+    changeConfirmationHead('<?php echo $this->Headline;?>');
+    changeConfirmationMain('<strong><?php echo $this->Message;?></strong>');
+    hideConfirmationBtnRed();
+	var sNewName = '<?php echo $this->sNewName; ?>';
+    $('#composite_<?php echo $this->iCompositeId; ?> .inner_contain .compname').text(((sNewName.length > 14) ? sNewName.substring(0, 13) + '...' : sNewName));
+</script>

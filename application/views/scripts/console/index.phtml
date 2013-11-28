@@ -1,0 +1,25 @@
+<link type="text/css" rel="stylesheet"
+	href="css/syntaxhighlighter/shCore.css" />
+
+<link
+	type="text/css" rel="stylesheet"
+	href="css/syntaxhighlighter/shCore<?php echo $this->theme;?>.css" />
+<link
+	type="text/css" rel="stylesheet"
+	href="css/syntaxhighlighter/shTheme<?php echo $this->theme;?>.css" />
+
+<pre class="brush: <?php echo $this->brush;?>"><?php echo $this->out; ?></pre>
+<script type="text/javascript"
+	src="ressources/syntaxhighlighter/shCore.js">
+</script>
+<script
+	type="text/javascript" src="ressources/syntaxhighlighter/shBrushAS3.js"></script>
+<script
+	type="text/javascript" src="ressources/syntaxhighlighter/shBrushCss.js"></script>
+<script
+	type="text/javascript" src="ressources/syntaxhighlighter/shBrushPhp.js"></script>
+<script
+	type="text/javascript" src="ressources/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript">
+SyntaxHighlighter.all();
+</script>

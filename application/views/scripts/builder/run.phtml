@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<title>Build System</title>
+		<link type="text/css" rel="stylesheet" href="../../css/dev.css" />
+		<link type="text/css" rel="stylesheet" href="../../css/base.css" />
+		<link type="text/css" rel="stylesheet" href="../../css/back_main.css" />
+		<link type="text/css" rel="stylesheet" href="../../css/jquery-ui-1.8.2.custom.css" />
+		<link type="text/css" rel="stylesheet" href="../../css/syntaxhighlighter/shCore.css" />
+		<link type="text/css" rel="stylesheet" href="../../css/syntaxhighlighter/shThemeMidnight.css" />
+		<!--[if IE]>
+		<style type="text/css">@import url(css/back_main_ie.css);</style>
+		<![endif]-->
+	</head>
+	<body class="tia_font_fam">
+		<form action="cats" method="post">
+			<div id="cats" class="tia_white">
+				<div class="controll_panel">
+					<div class="head">
+						<span>Categories view</span>
+						<input type="hidden" name="cats[lft]" value="empty" />
+						<input type="hidden" name="cats[lft]" value="empty" />
+						<input type="hidden" name="cats[rgt]" value="0" />
+					</div>
+					<div class="head">
+						<span id="cur_cat">/</span>
+					</div>
+					<div class="head">
+						<span>Navigation</span>
+						<input type="button" value="" class="add_cat button" />
+						<input type="button" value="" class="cut button" />
+						<input type="button" value="" class="paste button" />
+						<input type="button" value="" class="go_up button" />
+					</div>
+					<div class="head_form clearfix">
+						<input type="text" name="name_field" class="area tia_light_grey" />
+						<input type="button" class="tidyDesk button" value="" />
+						<input type="submit" class="add" value="" />
+					</div>
+				</div>
+				<div id="catmatrix" class="items clearfix">
+					<img class="area_loader" src="../../img/area_loader.gif" alt="lade..." />
+					<?php echo $this -> sAddCatHtml;?>
+				</div>
+				<div class="scroll_panel clearfix">
+					<a href="#" title="case sensitivity" class="filter_sensitivity"></a>
+					<input type="text" name="container[item][0]" class="area tia_light_grey filter" value="Filter" />
+					<a href="#" title="scroll up" class="scroll_up button"></a>
+					<a class="scroll_down button" href="#" title="scroll down"></a>
+				</div>
+			</div>
+			<div id="complist">
+				<div class="scroll_panel clearfix dn">
+
+					<input type="text" value="Filter" class="area tia_light_grey filter" name="container[item][0]">
+					<a class="scroll_up button" title="scroll up" href="#"></a>
+					<a title="scroll down" href="#" class="scroll_down button"></a>
+					<a title="close window"  class="db fl_right sprite button complist_close" href="#"></a>
+				</div>
+			</div>
+		</form>
+		<form action="meta" method="post">
+			<div id="meta" class="tia_white">
+				<div class="controll_panel">
+					<div class="head">
+						<span>Meta view</span>
+					</div>
+					<div class="head_form clearfix">
+						<input name="name_field" type="text" class="area tia_light_grey " />
+						<input type="button" class="tidyDesk button" value="" />
+						<input type="submit" class="add" value="" />
+						<input type="hidden" name="meta[lft]" />
+						<input type="hidden" name="meta[rgt]" />
+					</div>
+				</div>
+				<div class="items overflow_right">
+					<img class="area_loader" src="../../img/area_loader.gif" alt="lade..." />
+				</div>
+				<div class="scroll_panel clearfix">
+					<!--<a href="#" title="case sensitivity" class="filter_sensitivity"></a>-->
+					<input type="text" name="container[item][0]" class="area tia_light_grey filter" value="Filter" />
+					<a href="#" title="scroll up" class="scroll_up button"></a>
+					<a class="scroll_down button" href="#" title="scroll down"></a>
+				</div>
+			</div>
+		</form>
+		<?php
+		/*
+		 <form action="groups" method="post">
+		 <div id="groups" class="tia_white">
+		 <div class="head">
+		 <span>Metagroup view</span>
+		 </div>
+		 <div class="head_form clearfix">
+		 <input type="text" name="container[1]" class="area tia_light_grey" />
+		 <input type="button" class="tidyDesk button" value="" />
+		 <input type="submit" class="add" value="" />
+		 <input type="hidden" name="groups[lft]" />
+		 <input type="hidden" name="groups[rgt]" />
+		 </div>
+		 <div class="items overflow_right">
+		 <img class="area_loader" src="../../img/area_loader.gif" alt="lade..." />
+		 </div>
+		 <div class="scroll_panel clearfix">
+		 <!--<a href="#" title="case sensitivity" class="filter_sensitivity"></a>-->
+		 <input type="text" name="container[item][0]" class="area tia_light_grey filter" value="Filter" /><a href="#" title="scroll up" class="scroll_up button"></a>
+		 <a class="scroll_down button" href="#" title="scroll down"></a>
+		 </div>
+		 </div>
+		 </form>
+
+		 */
+		?>
+		<form action="comp" method="post">
+			<div id="comp" class="tia_white">
+				<div class="controll_panel">
+					<div class="head">
+						<span id="catname" class="tia_blue">Composite view</span>
+					</div>
+					<div class="head_form clearfix">
+						<input name="name_field" type="text" class="area tia_light_grey" />
+						<span  id="choosen_comp_name" class="dn"></span>
+						<input type="button" class="tidyDesk button" value="" />
+						<input type="submit" class="add" value="" />
+					</div>
+					<div class="head_form clearfix">
+						<span  id="choosen_comp_source" class="dn"></span>
+						<input id="source" readonly="readonly" name="name_field" type="text" class="area_long tia_light_grey" />
+					</div>
+					<div class="head_form clearfix">
+						<a href="#" class="close_comp dn fl_right button"></a>
+						<input id="restore_comp" name="restore" type="button" class="button restore_comp dn" value="" />
+						<input id="save_comp" name="save" type="button" class="button save_comp dn" value="" />
+					</div>
+				</div>
+				<div id="overflow_middle" class="items">
+					<img class="area_loader" src="../../img/area_loader.gif" alt="lade..." />
+				</div>
+				<div class="scroll_panel clearfix">
+					<!--<a href="#" title="case sensitivity" class="filter_sensitivity"></a>-->
+					<input type="text" name="container[item][0]" class="area tia_light_grey filter" value="Filter" />
+					<a href="#" title="scroll up" class="scroll_up button"></a>
+					<a class="scroll_down button" href="#" title="scroll down"></a>
+				</div>
+			</div>
+		</form>
+		<div id="confirm">
+			<div id="message" class="clearfix">
+				<img id="message_type" class="dn fl_left" src="../../img/info.png" alt="#" />
+				<div id="message_textarea" class="tia_lighter_grey fl_right">
+					<div id="message_headline">
+						<h1></h1>
+					</div>
+					<div id="message_text">
+						<br/>
+						<br/>
+						<div class="tia_center">
+							<img src="../../img/loader1.gif" alt="lade..." />
+						</div>
+					</div>
+					<div id="message_button">
+						<img class="msg_window_loader tgl_ok dn" src="../../img/loader1.gif" alt="Aufgabe wird erledigt."/>
+						<input type="button" class="confirm tgl_ok tia_black tia_mid fl_left button" id="confirmed" value="Ok" />
+						<input type="button" class="abort dn tia_black tia_mid button" id="abort" value="Abort" />
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="dn" id="catmap">
+		</div>
+		<script type="text/javascript" src="../../js/linker/run"></script>
+		<?php echo $this -> sAttach;?>
+	</body>
+</html>

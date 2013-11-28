@@ -1,0 +1,36 @@
+#cats,#comp,#meta,#groups {
+	background-color: #333;
+}
+
+#confirm {
+	background-color: #000;
+	filter: progid :       DXImageTransform.Microsoft.gradient (    
+     
+		     startColorstr =       
+		       #E5000000, endColorstr =               #E5000000 );
+	zoom: 1;
+}
+
+.area {
+	background-color: #000;
+}
+
+.value {
+	background-color: #000;
+}
+
+.meta_values,.mval,.mvalname,.meta_values option {
+	background: #1B4D5F;
+}
+
+.refresher:hover {
+	background: #000b4e;
+}
+
+.cat_info {
+	border-bottom: 1px solid #0D81DF;
+}
+
+#catmatrix {
+	background: url('../img/pattern.png');
+}

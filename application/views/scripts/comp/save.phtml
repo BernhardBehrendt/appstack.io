@@ -1,0 +1,7 @@
+<script type="text/javascript">
+changeConfirmationHead('<?php echo $this->Headline;?>');
+changeConfirmationMain('<strong><?php echo $this->Message;?></strong>');
+sRequestSender = 'close';
+loadCompMetas(iCurComp);
+$('#overflow_middle').css('margin-top', Math.floor($('#comp .controll_panel').height() + 5) + 'px');
+</script>

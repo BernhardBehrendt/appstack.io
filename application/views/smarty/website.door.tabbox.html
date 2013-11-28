@@ -1,0 +1,16 @@
+<div class="box tab_box">
+	<div id="tabs" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
+		<ul>
+			{foreach key=Index item=Composite from=$SM_A_TABS}
+			<li class="ui-state-default ui-corner-top ui-tabs-selected ui-state-active">
+				<a href="#tabs-{$Index}">{$Composite.name}</a>
+			</li>
+			{/foreach}
+		</ul>
+		{foreach key=Index item=Composite from=$SM_A_TABS}
+		<div id="tabs-{$Index}">
+			{fgc resource=$Composite.source file=$Composite.tags.file.properties.name mime=$Composite.tags.mime.properties.mimetype}
+		</div>
+		{/foreach}
+	</div>
+</div>

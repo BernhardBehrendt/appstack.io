@@ -1,0 +1,48 @@
+<div class="table">
+	{foreach key=Index item=Builder from=$SM_A_NAMESPACES}
+	{if ($Index%2)==0}
+	{assign var=zebra value="zeb"}
+	{else}
+	{assign var=zebra value="ra"}
+	{/if}
+	{if !isset($grplookup) ||  $Builder.GROUP!=$grplookup}
+	{if isset($grplookup) &&  $Builder.GROUP!=$grplookup}
+</div>
+{/if}
+<div class="nsgroup clearfix">
+	{assign var=grplookup value=$Builder.GROUP} <a class="nsgrpopen fl_left" href="#"></a>
+	<h3 class="fl_left">Namespaces of group <span class="apst_blue">{$grplookup}</span></h3>
+	<div class="clearfix row labels apst_pink fl_left">
+		<div class="fl_left id label apst_center">
+			Id
+		</div>
+		<div class="fl_left grnsname label">
+			Namespace
+		</div>
+		<div class="fl_left rights label">
+			Rights
+		</div>
+		<div class="fl_left run label">
+			Run
+		</div>
+	</div>
+	{/if}
+	<div id="{$Builder.ID}" class="clearfix fl_left row {$zebra}">
+		<div class="fl_left id apst_pink apst_center">
+			{$Builder.ID}
+		</div>
+		<div class="fl_left grnsname">
+			{$Builder.NAME}
+		</div>
+		<div class="fl_left rights">
+			{$Builder.RIGHTS}
+		</div>
+		<div class="fl_left run label apst_center">
+			<a href="#" class="nsopen"></a>
+		</div>
+	</div>
+	{/foreach}
+	{if isset($grplookup)}
+	</div>
+	{/if}
+</div>

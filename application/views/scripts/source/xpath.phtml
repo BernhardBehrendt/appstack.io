@@ -1,0 +1,71 @@
+<div id="config_source_xpath"><span class="source_error"> <?php echo $this->sourceError ?>
+</span> <span class="source_message"> <?php echo $this->sourceError ?> </span>
+<input id="location" name="location" type="text"
+	class="<?php echo $this->location_status; ?>"
+	value="<?php echo $this->location; ?>" /><input id="element"
+	name="element" type="text" class="<?php echo $this->element_status; ?>"
+	value="<?php echo $this->element; ?>" /><input id="attr" name="attr"
+	type="text" class=" <?php echo $this->attr_status; ?>"
+	value="<?php echo $this->attr; ?>" /><input id="limit" name="limit"
+	type="text" class="<?php echo $this->limit_status; ?>"
+	value="<?php echo $this->limit; ?>" /></div>
+<div id="preview_source" class="clearfix"><?php
+$aLocations = array();
+$aContents  = array();
+
+$sResponse = '';
+$sResponsePart = '';
+
+if(isset($this->response) && is_array($this->response)){
+	foreach($this->response as $iResponse => $aResponse){
+		if((isset($aResponse['location']) && !in_array($aResponse['location'], $aLocations) || !isset($aResponse['location']))){
+
+			$sResponsePart .= '<div id="source_item_'.$iResponse.'" class="source_item">';
+
+			$sTarget = substr($this->Tag, strlen($this->Tag)-3, strlen($this->Tag));
+			if($sTarget=='img' && $this->Attr=='src'){
+				$sResponsePart .=  '<img src="'.$aResponse['location'].'" class="source_previem fl_left">';
+			}else{
+				$sResponsePart .=  '<span class="fl_left source_preview">'.$this->Tag.'</span>';
+			}
+
+			if(isset($aResponse['location'])){
+
+				if(isset($aResponse['content'])){
+					$sTitle = $aResponse['content'];
+				}else{
+					$sTitle = '';
+				}
+				$sResponsePart .=  '<div class="fl_left source_location"><a title="'.$sTitle.'" class="tia_green" href="'.$aResponse['location'].'" target="_blank">'.$aResponse['location'].'</a></div>';
+			}else{
+				$sResponsePart .=  '<div class="fl_left source_location tia_green">'.$aResponse['content'].'</div>';
+			}
+
+		}
+
+
+
+		if(isset($aResponse['location']) && !in_array($aResponse['location'], $aLocations)){
+			$aLocations[count($aLocations)] = $aResponse['location'];
+			$sResponsePart .= '<input class="source location" type="hidden" value="'.$aResponse['location'].'" />';
+
+			if($this->Tag=='a'){
+				$sResponsePart .= '<a class="use_as_source" title="set as sourcepath" href="#"></a>';
+			}
+			$sResponsePart .= '</div>';
+			$sResponse .= $sResponsePart;
+		}else{
+			if(isset($aResponse['content']) && !in_array($aResponse['content'], $aContents)){
+				$aContents[count($aContents)] = $aResponse['content'];
+				$sResponsePart .= '<input class="source content" type="hidden" value="'.str_replace('"', "'", $aResponse['content']).'" />';
+				$sResponsePart .= '</div>';
+				$sResponse .= $sResponsePart;
+
+			}
+		}
+		$sResponsePart = '';
+	}
+
+	echo $sResponse;
+}
+?></div>

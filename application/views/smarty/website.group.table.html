@@ -1,0 +1,32 @@
+<div class="table">
+{foreach key=Index item=Group from=$SM_A_GROUPS}
+{if $Index==0}
+<div class="clearfix row labels apst_pink">
+	<div class="fl_left id label apst_center">Id</div>
+	<div class="fl_left grname label">Group</div>
+	<div class="fl_left created label">Created</div>
+	<div class="fl_left delete label apst_very_small">DELETE</div>
+	<div class="fl_left nsassign label apst_center apst_very_small">ADD NAMESPACES</div>
+	<div class="fl_left usrassign label apst_center apst_very_small">ADD USERS</div>
+</div>
+{/if}
+{if ($Index%2)==0}
+{assign var=zebra value="zeb"}
+{else}
+{assign var=zebra value="ra"}
+{/if}
+<div id="{$Group.ID}" class="clearfix row {$zebra}">
+	<div class="fl_left id apst_pink apst_center">{$Group.ID}</div>
+	<div class="fl_left grname">{$Group.NAME}</div>
+	<div class="fl_left created"><strong>{$Group.CREATED|replace:" ":"</strong><br/>"}</div>
+	<div class="fl_left delete label apst_center"><a href="#" class="grdelete"></a></div>
+	<div class="fl_left nsassign label apst_center"><a href="#" class="grnsassign"></a></div>
+	<div class="fl_left usrassign label apst_center"><a href="#" class="grusrassign"></a></div>
+</div>
+{/foreach}
+</div>
+{if $SM_I_GROUPS>$SM_I_PERPAGE}
+{section name=foo start=0 loop=(($SM_I_GROUPS/$SM_I_PERPAGE)|ceil) step=1}
+  <a href="{$SM_I_LIMITATION}?list_index={($smarty.section.foo.index*$SM_I_PERPAGE)}" class="pages limit {if ($smarty.section.foo.index*$SM_I_PERPAGE)==$SM_I_INDEX}apst_pink{/if}">{$smarty.section.foo.index+1}</a>
+{/section}
+{/if}

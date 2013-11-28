@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<title>appstack.io -Build your application - nothing else.</title>
+		<link type="text/css" rel="stylesheet" href="{$SM_STR_STATICDOMAIN}/css/ws.base.css" />
+		<link type="text/css" rel="stylesheet" href="{$SM_STR_STATICDOMAIN}/css/main.css" />
+		<link type="text/css" rel="stylesheet" href="{$SM_STR_STATICDOMAIN}/css/jqueryui.css" />
+		<base href="{$SM_STR_BASEHREF}" />
+	</head>
+	<body class="apst_font_fam">
+		<div id="wrapper" class="clearfix">
+			<div id="head" class="clearfix">
+				<a class="fl_left" href="{$SM_STR_BASEHREF}"> <img src="{$SM_STR_STATICDOMAIN}/img/logo_no2.png" alt="appstack.io logo"/> </a>
+				<div id="top_right">
+					{$SM_STR_HEAD_NAV}
+					<div id="interact" class="clearfix">
+						{if  isset($SM_BOOL_SECURITY)}
+						{if $SM_BOOL_SECURITY==1}
+						{assign var="SM_STR_SECURE_BASEHREF" value=$SM_STR_BASEHREF|replace:'http':'https'}
+						{else}
+						{assign var="SM_STR_SECURE_BASEHREF" value=$SM_STR_BASEHREF}
+						{/if}
+						{else}
+						{assign var="SM_STR_SECURE_BASEHREF" value=$SM_STR_BASEHREF}
+						{/if}
+						<form id="login_form" method="post" action="{$SM_STR_SECURE_BASEHREF}account/login" class="dn">
+							<div id="login_input" class="fl_left">
+								<input type="text" value="" name="username"/>
+								<input type="password" value="" name="password" />
+							</div>
+							<div id="login_commands" class="fl_right apst_small">
+								<a id="login" rel="nofollow" href="account/login">Login</a>
+								<a id="register" rel="nofollow" href="account/register">Register</a>
+								<a id="nopw" style="display:none;" rel="nofollow" href="account/nopw">Forgot password</a>
+							</div>
+						</form>
+						<form id="search_form" method="post" action="login">
+							<div>
+								<input type="text" value="search the site" name="searchterm"/>
+								<br/>
+								<a id="do_search" href="#">Search site</a>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			{$SM_STR_MAIN_NAV}
+
+			{if $SM_ARR_DOOR_BOXES}
+			{foreach key=Index item=Box from=$SM_ARR_DOOR_BOXES}
+			{$Box}
+			{/foreach}
+			{/if}
+
+			{if $SM_ARR_CONT_BOXES}
+
+			{if $SM_ARR_CONT_BOXES.LEFT}
+			<div id="teasers_left" class="fl_left clearfix">
+				{foreach key=Index item=Box from=$SM_ARR_CONT_BOXES.LEFT}
+				{$Box}
+				{/foreach}
+			</div>
+			{/if}
+
+			{if $SM_ARR_CONT_BOXES.CONTENT}
+			<div id="content" class="fl_left clearfix">
+				{foreach key=Index item=Box from=$SM_ARR_CONT_BOXES.CONTENT}
+				{$Box}
+				{/foreach}
+			</div>
+			{/if}
+
+			{if $SM_ARR_CONT_BOXES.RIGHT}
+			<div id="teasers_right" class="fl_right clearfix">
+				{foreach key=Index item=Box from=$SM_ARR_CONT_BOXES.RIGHT}
+				{$Box}
+				{/foreach}
+			</div>
+			{/if}
+
+			{/if}
+		</div>
+		{$SM_STR_FOOTER_NAV}
+		<script type="text/javascript" src="{$SM_STR_BASEHREF}js/linker/{$SM_STR_LINKED_JS}"></script>
+		{if strlen($SM_STR_JS_ATTACH)>0}
+		<script type="text/javascript">
+			{$SM_STR_JS_ATTACH}
+		</script>
+		{/if}
+	</body>
+</html>
